@@ -13,18 +13,18 @@
 % For questions, contact simon.musall@gmail.com
 
 %% construct path to data folder and give some basic info
-opts.fPath = dataPath; %path to imaging data
-opts.fName = 'corrFrames_1_640_540_uint16'; %name of imaging data files.
+opts.fPath = 'D:\E045\E045\MappingParadigm\29-Oct-2025'; %path to imaging data
+opts.fName = 'Frames_2_512_512_uint8'; %name of imaging data files.
 opts.stimLine = 4; %analog line that contains stimulus trigger.
 opts.trigLine = [2 3]; %analog lines for blue and violet light triggers.
-opts.preStim = 0.5; %pre-stimulus duration in seconds
-opts.postStim = 1; %post-stimulus duration in seconds
+opts.preStim = 2; %pre-stimulus duration in seconds
+opts.postStim = 2; %post-stimulus duration in seconds
 opts.plotChans = true; %flag to show separate channels when loading dual-wavelength data in each trial
 opts.sRate = 30; %sampling rate in Hz
 opts.downSample = 4; %spatial downsampling factor
-opts.hemoCorrect = false; %hemodynamic correction is optional (this only works with dual-color data in raw datasets).
+opts.hemoCorrect = true; %hemodynamic correction is optional (this only works with dual-color data in raw datasets).
 opts.fileExt = '.dat'; %type of video file. Use '.dat' for binary files (also works for .tif or .mj2 files)
-opts.preProc = true; %case if data is single channel and can be loaded directly (this is only true for the pre-processed example dataset).
+opts.preProc = false; %case if data is single channel and can be loaded directly (this is only true for the pre-processed example dataset).
 
 %% load imaging data
 rawFiles = dir([opts.fPath filesep opts.fName '*']); %find data files
